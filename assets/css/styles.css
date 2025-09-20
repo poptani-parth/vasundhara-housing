@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@import "tailwindcss";
+/*!
+ * Tailwind CSS v4.1.11
+ */
+
+.theme {
+  font-family: "Inter", sans-serif;
+  color: #333; /* Dark charcoal for body text */
+  line-height: 1.6; /* Improved line height for readability */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lora", serif;
+}
+.card-hover-effect {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.text-gradient {
+  background: linear-gradient(to right, #4c51bf, #667eea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-separator {
+  height: 2px;
+  background: linear-gradient(to right, #e0e7ff, #c7d2fe, #e0e7ff);
+  margin: 4rem auto;
+  width: 50%;
+  border-radius: 100%; /* Fully rounded */
+}
+.form-input {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200;
+}
+@keyframes fadeInUptoBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUptoBottom 0.8s ease-out forwards;
+}
+.animate-fade-in-up.delay-200 {
+  animation-delay: 0.2s;
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animate-slideInRight { animation: slideInRight 0.5s ease-out forwards; }
+
+
+/*  ---  tenant login page styles ---- */
+.bg-gradient-auth {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+/* Toast Notification */
+.toast-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease-in-out;
+}
+.toast-notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
